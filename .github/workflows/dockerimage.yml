@@ -15,9 +15,9 @@ jobs:
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Build the tagged Docker image
-        run: docker build . --file Dockerfile --tag jjrom/nginx-fpm:${{steps.vars.outputs.tag}}
+        run: docker build . --file Dockerfile --tag jjrom/nginx-fpm:${{tag}}
       - name: Push the tagged Docker image
-        run: docker push jjrom/nginx-fpm:${{steps.vars.outputs.tag}}
+        run: docker push jjrom/nginx-fpm:${{tag}}
       - name: Build the latest Docker image
         run: docker build . --file Dockerfile --tag jjrom/nginx-fpm:latest
       - name: Push the latest Docker image
