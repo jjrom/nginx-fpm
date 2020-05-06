@@ -51,3 +51,11 @@ RUN apt-get update && apt-get install -y software-properties-common curl inetuti
     phpenmod xdebug && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /run/php && chmod -R 755 /run/php
+
+# Copy NGINX service script
+COPY ./start-nginx.sh /etc/services.d/nginx/run
+RUN chmod 755 /etc/services.d/nginx/run
+
+# Copy PHP-FPM service script
+COPY ./start-fpm.sh /etc/services.d/php_fpm/run
+RUN chmod 755 /etc/services.d/php_fpm/run
