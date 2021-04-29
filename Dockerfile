@@ -1,4 +1,4 @@
-FROM jjrom/s6-overlay:latest
+FROM jjrom/s6-overlay:bionic
 LABEL maintainer="jerome.gasperi@gmail.com"
 
 # Set environment variables
