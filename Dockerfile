@@ -1,4 +1,4 @@
-FROM jjrom/s6-overlay:bionic
+FROM jjrom/s6-overlay:focal-1.0.0
 LABEL maintainer="jerome.gasperi@gmail.com"
 
 # Set environment variables
@@ -37,7 +37,9 @@ RUN apt-get update && apt-get install -y software-properties-common curl inetuti
     php-geos \
     php${PHP_VERSION}-opcache \
     php${PHP_VERSION}-mysql \
-    php-gettext \
+    # gettext is embeded in PHP 8+
+    #php-gettext \
+    php${PHP_VERSION}-common \
     php${PHP_VERSION}-xml \
     php${PHP_VERSION}-bcmath \
     php${PHP_VERSION}-mbstring \
