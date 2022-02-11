@@ -3,7 +3,7 @@ LABEL maintainer="jerome.gasperi@gmail.com"
 
 # Set environment variables
 # opcache https://www.scalingphpbook.com/best-zend-opcache-settings-tuning-config/
-ENV PHP_VERSION=8.0 \
+ENV PHP_VERSION=8.1 \
     PHP_FPM_PM=dynamic \
     PHP_FPM_MAX_CHILDREN=100 \
     PHP_FPM_START_SERVERS=10 \
