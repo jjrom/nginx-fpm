@@ -1,4 +1,4 @@
-FROM jjrom/s6-overlay:focal-1.0.0
+FROM jjrom/s6-overlay:jammy-1.0.0
 LABEL maintainer="jerome.gasperi@gmail.com"
 
 # Set environment variables
@@ -25,7 +25,6 @@ ENV PHP_VERSION=8.1 \
 
 # Add ppa, curl and syslogd
 RUN apt-get update && apt-get install -y software-properties-common curl inetutils-syslogd && \
-    apt-add-repository ppa:nginx/stable -y && \
     apt-add-repository ppa:ondrej/php -y && \
     #LC_ALL=C.UTF-8 apt-add-repository ppa:ondrej/php -y && \
     apt-get update && apt-get install -y \
