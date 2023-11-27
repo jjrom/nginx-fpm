@@ -1,4 +1,6 @@
 # nginx-fpm
 Docker nginx/php-fpm image
 
-docker build -t jjrom/nginx-fpm:latest -t jjrom/nginx-fpm:8.1 . 
+    #docker buildx build --platform linux/amd64, linux/arm64 -t jjrom/nginx-fpm:latest -t jjrom/nginx-fpm:8.2 .
+
+    docker build -t jjrom/nginx-fpm:latest -t jjrom/nginx-fpm:8.2 .
