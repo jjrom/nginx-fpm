@@ -1,9 +1,9 @@
-FROM jjrom/s6-overlay:3.1.6.2-noble-20240827.1
+FROM jjrom/s6-overlay:3.1.6.2-resolute-20261024.1
 LABEL maintainer="jerome.gasperi@gmail.com"
 
 # Set environment variables
 # opcache https://www.scalingphpbook.com/best-zend-opcache-settings-tuning-config/
-ENV PHP_VERSION=8.3 \
+ENV PHP_VERSION=8.5 \
     PHP_FPM_PM=dynamic \
     PHP_FPM_MAX_CHILDREN=100 \
     PHP_FPM_START_SERVERS=10 \
@@ -36,7 +36,8 @@ RUN apt-get update && apt-get install -y software-properties-common curl inetuti
     #php${PHP_VERSION}-json \
     php${PHP_VERSION}-pgsql \
     php-geos \
-    php${PHP_VERSION}-opcache \
+    # Since PHP 8.5, the OPcache extension is always included in PHP core
+    #php${PHP_VERSION}-opcache \
     php${PHP_VERSION}-mysql \
     # gettext is embeded in PHP 8+
     #php-gettext \
